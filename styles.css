@@ -1,0 +1,60 @@
+:root {
+    --animation-curve: cubic-bezier(1,0,0,1)
+}
+
+body {
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+label {
+    width: 12em;
+    height: 1.5em;
+    background-color: white;
+    position: absolute;
+    cursor: pointer;
+}
+    label:before, 
+    label:after {
+        content: "";
+        width: 12em;
+        height: 1.5em;
+        background-color: white;
+        position: absolute;
+        display: block;
+        transition: all 0.6s var(--animation-curve);
+    }
+    label:before {
+        top:-250%;
+        left:0%;
+        transform-origin: left top;
+        transform: rotateZ(0deg)
+    }
+
+    label:after {
+        bottom:-250%;
+        transform-origin: left bottom;
+    }
+
+#toggle:checked ~ label:before {
+    background-color: red;
+    transform: rotateZ(41deg);
+}
+#toggle:checked ~ label:after {
+    background-color: red;
+    transform: rotateZ(-41deg);
+}
+#toggle:checked ~ label {
+    background-color: black;
+}
+
+#toggle ~ label {
+    transition: all 0.5s var(--animation-curve);
+}
+
+input {
+    display: none;
+}

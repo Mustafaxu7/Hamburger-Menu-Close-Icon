@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "..\\new_profile"
+		}
+	],
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"liveServer.settings.multiRootWorkspaceName": "final"
+	}
+}
